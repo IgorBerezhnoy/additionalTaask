@@ -1,12 +1,4 @@
-## Redux-flow
+# Дополнительный урок 01 для спринта 04 (Четверг)
 
-### Install dependency => yarn | yarn install
-### Start project => yarn start
-
-## YOU MUST KNOW IT
-### Work progress redux, without async logic => https://rb.gy/urhzcc
-### Work progress redux, with async logic => https://rb.gy/2wos1v
-### Documentation https://redux.js.org/tutorials/fundamentals/part-6-async-logic
-
-### Telegram: @gleb_pilipenka
-### Good Luck (:
+- [Swagger документация](https://api.flashcards.andrii.es/docs)
+- [Пример готового проекта](https://04-sprint-01-add-lesson-flashcards.vercel.app/)
