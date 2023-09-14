@@ -1,27 +1,30 @@
 import s from './AddNewPostForm.module.css'
 import { useForm } from 'react-hook-form'
-import { useAppDispatch } from '../../../app/store'
-import { createDeskTC } from '../decks-thunks'
+import { useAppDispatch } from '../../../app/store.ts'
+import { addDeckTC } from '../decks-thunks.ts'
 
 type FormValues = {
   name: string
 }
 
 export const AddNewDeckForm = () => {
+  const dispatch = useAppDispatch()
+
   const {
     register,
-    reset,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
       name: '',
     },
   })
-let dispatch =useAppDispatch()
+
   const onSubmit = (data: FormValues) => {
-  dispatch(createDeskTC(data.name))
-    .then(()=>reset())
+    dispatch(addDeckTC(data.name)).then(() => {
+      reset()
+    })
   }
 
   return (

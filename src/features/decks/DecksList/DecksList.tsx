@@ -1,12 +1,15 @@
-import { DeckItem } from './DeckItem/DeckItem'
-import { useFetchDesk } from './DeckItem/UseFetchDesk/UseFetchDesk'
+import s from './DecksList.module.css'
+import { DeckItem } from './DeckItem/DeckItem.tsx'
+import { useFetchDecks } from './useFetchDecks.ts'
 
 export const DecksList = () => {
-  let { decks } = useFetchDesk()
+  const { decks } = useFetchDecks()
 
-
-  // return <div>{decks.map(el=><div>{el.name}</div>)}</div>
-  return <div>{decks.map(el => <DeckItem key={el.id} deck={el} />)}</div>
-
-
+  return (
+    <ul className={s.list}>
+      {decks.map((deck) => (
+        <DeckItem key={deck.id} deck={deck} />
+      ))}
+    </ul>
+  )
 }
